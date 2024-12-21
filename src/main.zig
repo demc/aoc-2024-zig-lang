@@ -1,6 +1,6 @@
 const std = @import("std");
 const day01 = @import("solutions/day01.zig");
-const utils = @import("utils.zig");
+const utils = @import("solutions/utils.zig");
 
 pub fn main() !void {
     var gpa = std.heap.GeneralPurposeAllocator(.{}){};
@@ -19,6 +19,9 @@ pub fn main() !void {
     // Read input file
     const input = try utils.readInput(allocator, day);
     defer allocator.free(input);
+
+    //std.debug.print("HELLO DAY {d} \n\n", .{day});
+
 
     // Solve the day's puzzles
     switch (day) {

@@ -20,10 +20,11 @@ pub fn build(b: *std.Build) void {
 
     // Tests
     const unit_tests = b.addTest(.{
-        .root_source_file = .{ .path = "src/tests.zig" },
-        .target = target,
-        .optimize = optimize,
+        .name = "unit tests",
+        .root_source_file = b.path("src/solutions/day01.zig"),
+        .target = b.host,
     });
+    b.installArtifact(unit_tests);
 
     const run_unit_tests = b.addRunArtifact(unit_tests);
     const test_step = b.step("test", "Run unit tests");

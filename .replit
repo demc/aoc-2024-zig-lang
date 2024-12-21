@@ -1,6 +1,8 @@
 modules = ["zig"]
+run = "zig build run"
+
 [workflows]
-runButton = "Project"
+runButton = "zig build run"
 
 [[workflows.workflow]]
 name = "Project"
